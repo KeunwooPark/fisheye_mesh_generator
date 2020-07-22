@@ -1,12 +1,10 @@
-# Fisheye Obj for Unity
-This is dirty script for making fisheye projection objects for Unity.
-If you want to make a fisheye camera in Unity, you can use the .obj files.
-This script makes five object files(front, top, bottom, right, left).
+# Fisheye Mesh Generator
+This is a script for making fisheye projection mesh objects for Unity.
+It generates mesh files (.obj) and you can use theses files to create a virtual fisheye camera in a Unity virtual environment.
 
-This script is for 180 degree camera. If you want a camera with larger degree, you can change the code to make it.
+This script is only for 180 degree camera. If you want a camera with larger degree, you can change the code to make it.
 
 If you want to know more detail please check references.
-(The references are not my webpage)
 
 ## How to use
 ```shell
