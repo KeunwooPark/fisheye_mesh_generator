@@ -11,8 +11,8 @@ def parse_args():
     parser.add_argument('--model_type', type=str, required = True, \
                         choices = ["equidistance", "orthogonal", "stereographic", "equisolid"],\
                         help = "The model type for a fisheye camera.")
-    parser.add_argument("--res", type=int, default = 256,\
-                        help = "The number grids that splits the side of a view. (default: 256)")
+    parser.add_argument("--res", type=int, default = 64,\
+                        help = "The number grids that splits the side of a view. (default: 64)")
 
     return parser.parse_args()
 
