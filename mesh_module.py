@@ -36,12 +36,6 @@ class SquareMesh(Mesh):
         self.half_range = (0, 0.5)
 
         self.make_mesh(side)
-        #self.make_vertices(side)
-        #self.make_UV_map(side)
-        #self.make_surfaces(side)
-
-        #self.arrange_vertices(side)
-
 
     def make_mesh(self, side):
         if(side == 'front'):
@@ -60,14 +54,6 @@ class SquareMesh(Mesh):
         interval = dist/num_div
         divided = [range_to_div[0] + interval * i for i in range(num_div+1)]
         return divided
-
-    def make_vertices(self, side):
-        self.vertices = []
-        if side == 'front':
-            self.vertices = self.make_front_vertices()
-        else:
-            x_range = self.divide_range(self.range, self.res)
-            y_range = self.divide_range(self.half_range, int(self.res/2))
 
     def make_front(self):
         # set vertices
