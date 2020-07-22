@@ -11,10 +11,10 @@ $ pip install -r requirements.txt
 ```
 Then run the script.
 ```shell
-$ run.py --model_type equidistance --res 64
+$ python run.py --model_type equidistance --res 64
 ```
 
-### Model Type
+### Model Types
 This generator supports four fisheye projection model types.
 * equidistance
 * orthogonal
