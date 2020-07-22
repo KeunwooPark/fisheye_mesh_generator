@@ -2,9 +2,7 @@
 This is a fisheye projection mesh generator.
 It generates mesh files (.obj) and you can use theses files to create a virtual fisheye camera in a Unity virtual environment.
 
-This script is only for 180 degree camera. If you want a camera with larger degree, you can change the code to make it.
-
-If you want to know more detail please check references.
+This script is only for 180 degree camera. You can update the code change the FOV.
 
 ## How to Use
 Install dependent packages first.
