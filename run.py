@@ -1,3 +1,4 @@
+import argparse
 from mesh_module import *
 import visualize as viz
 import sys
@@ -5,16 +6,22 @@ import os
 
 faces = ['front', 'left', 'right', 'bottom', 'top']
 
-if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("How to use: > run.py 'fisheye model type' 'resolution'")
-        print("ex) run.py equidistance 64")
-        exit()
+def parse_args():
+    parser = argparse.ArgumentParser(description='Create meshes for a virtual fisheye camera.')
+    parser.add_argument('--model_type', type=str, required = True, \
+                        choices = ["equidistance", "orthogonal", "stereographic", "equisolid"],\
+                        help = "The model type for a fisheye camera.")
+    parser.add_argument("--res", type=int, default = 256,\
+                        help = "The number grids that splits the side of a view. (default: 256)")
 
-    fisheye_type = sys.argv[1]
-    resolution = int(sys.argv[2])
+    return parser.parse_args()
+
+def main(args):
+    fisheye_type = args.model_type
+    resolution = args.res
     square_obj_dir = "square_objs"
     fish_obj_dir = "fish_objs"
+
     if not os.path.exists(square_obj_dir):
         os.makedirs(square_obj_dir)
 
@@ -30,3 +37,7 @@ if __name__ == "__main__":
         fish_meshes.append(f_mesh)
 
     viz.visualize_fisheye_mesh(fish_meshes, faces, ['b', 'r', 'y', 'c', 'm'])
+
+if __name__ == "__main__":
+    args = parse_args()
+    main(args)
